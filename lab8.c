@@ -37,7 +37,15 @@ char* readString()
 
 int readAmountToShift()
 {
-  return 0;
+    int shift = 0;
+    do
+    {
+    if(shift < 0 || shift > 2000000000)
+        printf("error: Number must be between 0 and 2 bill\n");
+    printf("Enter amount to shift: ");
+    scanf("%d", &shift);
+    }while(shift < 0 || shift > 2000000000);
+  return shift;
 }// end function
 
 
