@@ -5,13 +5,19 @@ const int MAX = 100;
 
 int menu()
 {
-  //1. Read a New String 2. Encrypt
-//3. Decrypt
-//4. Quit
+  int choice;
+
+    do
+    {
+        printf("\nMenu:\n1. Read a New String\n2. Encrypt\n3. Decrypt\n4) Quit\nChoose: ");
+        scanf("%d", &choice);
+
+        if(choice < 1 || choice > 4)
+            printf("\nYou entered an invalid menu choice.");
+
+    }while(choice < 1 || choice > 4);
   
-  
-  
-  return 4;
+  return choice;
 }// end function
 
 
