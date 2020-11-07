@@ -1,5 +1,5 @@
 #include "lab8.h"
-
+#include <ctype.h>
 const int MAX = 100;
 
 
@@ -26,18 +26,21 @@ char* readString()
     char * str, pre_str[MAX]; 
     printf("Enter a String: ");
     fgets(pre_str, MAX, stdin);
+    //for(int x = 0; x < strlen(str); x++)
+        //printf("pre_str: %c", pre_str[x]);
+    printf("%s", pre_str);
     stripCarriageReturn(pre_str);
 
     str = (char *) calloc(strlen(pre_str) + 1, sizeof(char)); 
     strcpy(str, pre_str);
-  
+
   return str;
 }// end function
 
 
 int readAmountToShift()
 {
-    int shift = 0;
+    int shift;
     do
     {
     if(shift < 0 || shift > 2000000000)
@@ -45,19 +48,51 @@ int readAmountToShift()
     printf("Enter amount to shift: ");
     scanf("%d", &shift);
     }while(shift < 0 || shift > 2000000000);
+
+    while(fgetc(stdin) != '\n'){}
   return shift;
 }// end function
 
 
 char readDirection()
 {
-  return 'R';
+    char LorR;
+    printf("Enter direction L or R: ");
+    scanf("%c", &LorR);
+    LorR = toupper(LorR);
+    while(fgetc(stdin) != '\n'){}
+  return LorR;
 }// end function
 
 
 char* encryptString(char* str, int rotAmount, char direction)
 {
-  return NULL;
+  char * encryptstr = NULL;
+  int rot = rotAmount % 26;
+  encryptstr = (char *) calloc(strlen(str), sizeof(char)); 
+  strcpy(encryptstr, str);
+  if(direction == 'R')
+    rot = (-1) * rot;
+
+  for(int i = 0; i < strlen(str); i++)
+  {
+    if(str[i] >= 'a' && str[i] <= 'z')
+    {
+        if(str[i] + rot < 97) // if R overflow
+            encryptstr[i] = str[i] + 26 + rot;
+            
+        else if(str[i] + rot > 122) // if L overflow
+            encryptstr[i] = str[i] - 26 + rot;
+                
+        else
+            encryptstr[i] = str[i] + rot;
+    }
+    
+  }
+  
+  
+
+  return encryptstr;
 }// end function
 
 

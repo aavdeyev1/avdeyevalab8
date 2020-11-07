@@ -1,0 +1,32 @@
+recap strings and dynamic allocation
+
+
+fgets
+strip carraige return
+dynamically allocate (+1 items to acct for strcopu automatic \0)
+strcpy
+
+
+s t u   s t i e n e r \0
+0 1 2 3 4 5 6 7 8 9 10 11 
+
+strlen counts num of chars NOT counting \0 len is then 11
+
+char ltr;
+for(x = 0; x< strlen(name))
+{
+    if(name[x] >= 'a' && name[x] <= 'z')
+        ltr = (char)(name[x] + rot;) //name[x] becomes int., need % mod tho
+
+
+
+}
+
+0      1 2 3 4
+100000 R t u v
+acc: 5Rtuv
+if(en[1] == 'R')
+
+
+
+strip carriage return
