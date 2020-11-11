@@ -1,0 +1,201 @@
+
+ clang-7 -pthread -lm -o main lab8.c main.c
+ ./main
+Enter a String: //abc defghijklmnopqrstuvwx yz
+The original string is //abc defghijklmnopqrstuvwx yz
+Enter amount to shift: 2
+Enter direction L or R: r
+The encrypted string is CR//yza bcdefghijklmnopqrstuv wx
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 3
+The decrypted string is //abc defghijklmnopqrstuvwx yz
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 2
+Enter amount to shift: 3
+Enter direction L or R: l
+The encrypted string is DL//def ghijklmnopqrstuvwxyza bc
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 3
+The decrypted string is //abc defghijklmnopqrstuvwx yz
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 10
+
+You entered an invalid menu choice.
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: -1
+
+You entered an invalid menu choice.
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 4
+Quitting Program!
+ 
+
+
+
+
+ clang-7 -pthread -lm -o main lab8.c main.c
+ ./main
+Enter a String: amelya avdeyev
+The original string is amelya avdeyev
+Enter amount to shift: 1234567891 
+Enter direction L or R: R
+The encrypted string is LRpbtanp pkstntk
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 3
+The decrypted string is amelya avdeyev
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 1
+Enter a String: done
+The original string is done
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 3
+The decrypted string is amelya avdeyev
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 4
+Quitting Program!
+ 
+
+
+
+ clang-7 -pthread -lm -o main lab8.c main.c
+ ./main
+Enter a String: zyxabc hello hello hello
+The original string is zyxabc hello hello hello
+Enter amount to shift: 25
+Enter direction L or R: k
+error: direction must be L or R
+Enter direction L or R: error: direction must be L or R
+Enter direction L or R: p
+error: direction must be L or R
+Enter direction L or R: error: direction must be L or R
+Enter direction L or R: L
+The encrypted string is ZLyxwzab gdkkn gdkkn gdkkn
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 10
+
+You entered an invalid menu choice.
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: -100000000
+
+You entered an invalid menu choice.
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 1
+Enter a String: abcdef
+The original string is abcdef
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 2
+Enter amount to shift: 1000000000000
+error: Number must be between 0 and 2 bill
+Enter amount to shift: 2
+Enter direction L or R: L
+The encrypted string is CLcdefgh
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 3
+The decrypted string is abcdef
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 1
+Enter a String: ??{}|;'a ,.,. b ,.,. c
+The original string is ??{}|;'a ,.,. b ,.,. c
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 2
+Enter amount to shift: 2000000000
+Enter direction L or R: R
+The encrypted string is YR??{}|;'c ,.,. d ,.,. e
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 3
+The decrypted string is ??{}|;'a ,.,. b ,.,. c
+
+Menu:
+1. Read a New String
+2. Encrypt
+3. Decrypt
+4. Quit
+Choose: 4
+Quitting Program!
+ 

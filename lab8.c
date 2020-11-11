@@ -1,5 +1,7 @@
 #include "lab8.h"
 #include <ctype.h>
+#include <string.h>
+#include <stdio.h>
 const int MAX = 100;
 
 //abc defghijklmnopqrstuvwx yz
@@ -48,7 +50,6 @@ int readAmountToShift()
         printf("error: Number must be between 0 and 2 bill\n");
     printf("Enter amount to shift: ");
     scanf("%d", &shift);
-    printf("%d\n", shift); //
     }while(shift < 0 || shift > 2000000000);
 
     while(fgetc(stdin) != '\n'){}
@@ -77,14 +78,13 @@ char readDirection()
 
 
 char* encryptString(char* str, int rotAmount, char direction)
-{ // only work with single digits?
+{
   char * encryptstr = NULL;
   int rot = rotAmount % 26;
-  encryptstr = (char *) calloc(strlen(str) + 2, sizeof(char)); 
-  encryptstr[0] = rot + '0'; // better way?
+  encryptstr = (char *) calloc(strlen(str) + 3, sizeof(char)); 
+  encryptstr[0] = toupper((char) (rot + 97));
   encryptstr[1] = direction;
-  strncpy(encryptstr + 2, str, strlen(str) + 2);
-
+  strncpy((encryptstr + 2), str, strlen(str));
 
   if(direction == 'R')
       rot = (-1) * rot;
@@ -104,6 +104,7 @@ char* encryptString(char* str, int rotAmount, char direction)
     }
     
   }
+
   return encryptstr;
 }// end function
 
@@ -119,19 +120,30 @@ char getDirection(char* encryptedString)
 int getRotation(char* encryptedString)
 {
     int rot;
-    rot = encryptedString[0] - 48;
+    rot = (int) encryptedString[0] - 65;
   return rot;
 }// end function
 
 
 char* decryptString(char* str, int rotAmount, char direction)
 {
-  if(direction == 'L')
-    direction = 'R';
-  else
-    direction = 'L';
+    char * decryptstr = NULL, *temp = NULL, *sub=NULL;
+    int x;
+    sub = strdup(str+2);
   
-  return encryptString(str + 2, rotAmount, direction) + 2;
+    if(direction == 'L')
+        direction = 'R';
+    else
+        direction = 'L';
+
+    decryptstr = encryptString(sub, rotAmount, direction);
+    temp = (char *) calloc(strlen(decryptstr) - 1, sizeof(char));
+    for(x = 0; x < strlen(sub); x++) 
+        temp[x] = decryptstr[x + 2];
+    //copy the new encrypt str into sub, past 2 bits
+    free(decryptstr);
+    free(sub);
+  return temp;
 }// end function
 
 
